@@ -1,3 +1,4 @@
 OrderedDictionary {
-	'packages/MessageSendRecorder' : #SquotTonelSerializer
+	'packages/MessageSendRecorder' : #SquotTonelSerializer,
+	'packages/BaselineOfMessageSendRecorder' : #SquotTonelSerializer
 }
