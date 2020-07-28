@@ -14,13 +14,13 @@ Metacello new
 
 In general, you have to set up a `MessageSendRecorder` with an instance of `MessageSend` to then `#record` a tree (or trace) of sends, which you can `#browse`. The methods you watch define the granularity of the tree the recorder records.
 
-For example, you can watch all methods in the *Morhpic* and *Graphics* package to then record all sends involved for drawing the current world:
+For example, you can watch all methods in the *Morphic* and *Graphics* package to then record all sends involved for drawing the current world:
 
 ```Smalltalk
 recorder := MessageSendRecorder new
   watchPackageNamed: #Graphics;
   watchPackageNamed: #Morphic;
-  setMessageSend: (MessageSend selector: #imageForm receiver: Project current world);
+  setMessageSend: (MessageSend receiver: Project current world selector: #imageForm);
   yourself.
 ```
 
@@ -35,9 +35,61 @@ You can also record the duration of each call, which can then be used to post-pr
 
 ```Smalltalk
 recorder record: #duration.
-recorder collectTimeRatio.
-recorder collectTimeToRun.
+recorder collectTimeRatio. "post-record processing"
+recorder collectTimeToRun. "post-record processing"
+recorder topRecord browse.
 ```
+
+The record browser looks like a debugger because it shows similar information:
+
+![Record Browser](screenshots/msr-browser-1.png)
+
+## How to Record More Data
+
+You can configure the recorder with before/after blocks to write more information into the records such as argument classes and return values. Any extra information is stored in `MessageSendRecordExtension`, which can dynamically add missing instance variables.
+
+```Smalltalk
+recorder
+  setBefore: { [:record :rcvr :args | record extension receiverObject: rcvr ] }
+  after: { [:record :rcvr :args :result | record extension returnValue: result ] }.
+```
+
+*Beware of resource-intensive operations such as full object copies!*
+
+## How to Re-record Data
+
+You can run the recorder multiple times to, for example, record extra information only later on. The recorder will complain with a `MsrRecordNotFound` exception if the sends do not match the initial recording and hence indicate non-deterministic behavior.
+
+```Smalltalk
+recorder record. "initial recording"
+recorder record: #duration. "additional run"
+```
+
+Note that the `MsrRandumNumberWrapper` will provide a fixed seed and thus a deterministic way to re-record behavior that uses random numbers.
+
+### How to Re-record Data for a Specific Send
+
+It is possible to just record critical information - such as full copies of arguments - for a specific send. After the initial recording, you can do that for any record in the tree:
+
+```Smalltalk
+recorder record.
+"..."
+recorder recordInto: aRecord before: "..." after: "..."
+```
+
+Note that that record must be reachable from the recorder's `topRecord`.
+
+## How to Start Recording for a Specific Receiver
+
+It is possible to use a helper wrapper to then start the recording when that helper is triggered:
+
+```Smalltalk
+recorder recordSend: #openInWorld to: myMorph.
+```
+
+Note that the recorder needs to be configured as mentioned above. If that send is never triggered, method wrappers may lay around in your Squeak image.
+
+There are examples in this project that `#recordNextKeyStroke` or `#recordNextMouseUp` to learn more about Morphic event handling. :smile:
 
 ## Related Work
 
