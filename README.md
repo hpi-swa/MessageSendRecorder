@@ -10,6 +10,35 @@ Metacello new
   load.
 ```
 
+## How to Use
+
+In general, you have to set up a `MessageSendRecorder` with an instance of `MessageSend` to then `#record` a tree (or trace) of sends, which you can `#browse`. The methods you watch define the granularity of the tree the recorder records.
+
+For example, you can watch all methods in the *Morhpic* and *Graphics* package to then record all sends involved for drawing the current world:
+
+```Smalltalk
+recorder := MessageSendRecorder new
+  watchPackageNamed: #Graphics;
+  watchPackageNamed: #Morphic;
+  setMessageSend: (MessageSend selector: #imageForm receiver: Project current world);
+  yourself.
+```
+
+You can then record and browse the results:
+
+```Smalltalk
+recorder record.
+recorder topRecord browse.
+```
+
+You can also record the duration of each call, which can then be used to post-process the recording with additional information such as ration or time-to-run in milliseconds:
+
+```Smalltalk
+recorder record: #duration.
+recorder collectTimeRatio.
+recorder collectTimeToRun.
+```
+
 ## Related Work
 
  * Vasily Kirilichev, Eric Seckler, Benjamin Siegmund, Michael Perscheid, and Robert Hirschfeld. *Stepwise Back-in-time Debugging*. In Proceedings of GI Informatiktage 2014, Potsdam, Germany, March 27-28, 2014, GI.
