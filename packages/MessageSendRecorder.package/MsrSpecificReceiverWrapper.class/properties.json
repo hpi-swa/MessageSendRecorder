@@ -1,0 +1,16 @@
+{
+	"category" : "MessageSendRecorder-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"recorder",
+		"receiver",
+		"unwrappedMethod" ],
+	"name" : "MsrSpecificReceiverWrapper",
+	"pools" : [
+		 ],
+	"super" : "MwMethodWrapper",
+	"type" : "normal" }

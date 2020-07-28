@@ -1,0 +1,1 @@
+I am a specialized inspector on an instance of MessageSendRecord. I blend information from that record and its #parent (record) to produce the equivalent of a ContextVariablesInspector. My primary use case is in the record browser tool.

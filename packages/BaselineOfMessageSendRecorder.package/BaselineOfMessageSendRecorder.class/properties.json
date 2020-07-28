@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfMessageSendRecorder",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfMessageSendRecorder",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }

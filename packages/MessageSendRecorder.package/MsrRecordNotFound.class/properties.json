@@ -1,0 +1,15 @@
+{
+	"category" : "MessageSendRecorder-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"parentRecord",
+		"expectedChildId" ],
+	"name" : "MsrRecordNotFound",
+	"pools" : [
+		 ],
+	"super" : "Exception",
+	"type" : "normal" }

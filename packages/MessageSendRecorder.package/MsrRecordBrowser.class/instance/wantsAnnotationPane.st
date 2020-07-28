@@ -1,0 +1,4 @@
+building
+wantsAnnotationPane
+
+	^ Debugger wantsAnnotationPane

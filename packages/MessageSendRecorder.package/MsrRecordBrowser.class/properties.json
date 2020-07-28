@@ -1,0 +1,19 @@
+{
+	"category" : "MessageSendRecorder-Tools",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "mt 7/28/2020 09:26",
+	"instvars" : [
+		"topRecord",
+		"selectedRecord",
+		"selectedRecordPath",
+		"receiverInspector",
+		"contextInspector",
+		"showStack" ],
+	"name" : "MsrRecordBrowser",
+	"pools" : [
+		 ],
+	"super" : "CodeHolder",
+	"type" : "normal" }

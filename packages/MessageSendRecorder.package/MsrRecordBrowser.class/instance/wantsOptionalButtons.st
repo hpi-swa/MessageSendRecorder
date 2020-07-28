@@ -1,0 +1,4 @@
+building
+wantsOptionalButtons
+
+	^ Preferences extraDebuggerButtons

@@ -1,0 +1,9 @@
+{
+	"class" : {
+		"on:" : "mt 7/24/2020 15:14" },
+	"instance" : {
+		"install" : "mt 7/24/2020 14:56",
+		"numCallsBefore" : "mt 7/24/2020 14:57",
+		"recorder" : "mt 7/24/2020 14:57",
+		"setRecord:" : "mt 7/24/2020 15:14",
+		"valueWithReceiver:arguments:" : "mt 7/24/2020 16:11" } }

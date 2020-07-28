@@ -1,0 +1,22 @@
+{
+	"category" : "MessageSendRecorder",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "mt 7/24/2020 16:23",
+	"instvars" : [
+		"recorder",
+		"id",
+		"parent",
+		"children",
+		"method",
+		"sendId",
+		"receiverClass",
+		"receiverId",
+		"extension" ],
+	"name" : "MessageSendRecord",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

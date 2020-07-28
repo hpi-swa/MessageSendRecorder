@@ -1,0 +1,15 @@
+{
+	"category" : "MessageSendRecorder-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"random",
+		"unwrappedMethod" ],
+	"name" : "MsrRandomNumberWrapper",
+	"pools" : [
+		 ],
+	"super" : "MwMethodWrapper",
+	"type" : "normal" }

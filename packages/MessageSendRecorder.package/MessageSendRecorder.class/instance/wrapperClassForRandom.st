@@ -1,0 +1,4 @@
+recording - wrappers
+wrapperClassForRandom
+
+	^ MsrRandomNumberWrapper

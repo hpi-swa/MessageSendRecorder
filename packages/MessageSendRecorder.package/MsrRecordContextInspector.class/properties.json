@@ -1,0 +1,14 @@
+{
+	"category" : "MessageSendRecorder-Tools",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "mt 7/28/2020 09:09",
+	"instvars" : [
+		 ],
+	"name" : "MsrRecordContextInspector",
+	"pools" : [
+		 ],
+	"super" : "Inspector",
+	"type" : "normal" }

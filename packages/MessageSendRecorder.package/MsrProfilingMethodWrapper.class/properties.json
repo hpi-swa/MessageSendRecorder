@@ -1,0 +1,14 @@
+{
+	"category" : "MessageSendRecorder-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "MsrProfilingMethodWrapper",
+	"pools" : [
+		 ],
+	"super" : "MsrMethodWrapper",
+	"type" : "normal" }

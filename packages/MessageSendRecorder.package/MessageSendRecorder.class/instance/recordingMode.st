@@ -1,0 +1,4 @@
+accessing
+recordingMode
+	
+	^ recordingMode
