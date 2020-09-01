@@ -1,7 +1,7 @@
 {
 	"class" : {
 		"example01" : "mt 7/28/2020 10:16",
-		"example02" : "mt 7/28/2020 10:16",
+		"example02" : "mt 7/28/2020 11:33",
 		"example03" : "mt 7/28/2020 10:16",
 		"example04" : "mt 7/28/2020 10:16",
 		"example04Text" : "mt 7/21/2020 17:24",
@@ -9,7 +9,9 @@
 		"example06" : "mt 7/28/2020 10:17",
 		"example07" : "mt 7/28/2020 10:17",
 		"example08" : "mt 7/28/2020 10:17",
-		"example09" : "mt 7/28/2020 10:58" },
+		"example09" : "mt 7/28/2020 10:58",
+		"example10" : "mt 7/28/2020 11:34",
+		"example11" : "mt 9/1/2020 12:19" },
 	"instance" : {
 		"collectArgumentNames" : "mt 7/21/2020 14:10",
 		"collectTimeRatio" : "mt 7/23/2020 14:37",
@@ -34,8 +36,8 @@
 		"record:send:to:" : "mt 7/28/2020 10:58",
 		"recordAllObjects" : "mt 7/28/2020 11:11",
 		"recordInto:before:after:" : "mt 7/28/2020 10:05",
-		"recordInto:receiver:arguments:context:" : "mt 7/24/2020 15:40",
-		"recordInto:return:receiver:arguments:context:" : "mt 7/24/2020 15:30",
+		"recordInto:receiver:arguments:context:" : "mt 9/1/2020 12:16",
+		"recordInto:return:receiver:arguments:context:" : "mt 9/1/2020 12:17",
 		"recordSend:to:" : "mt 7/28/2020 10:56",
 		"recordSendId:method:receiver:arguments:" : "mt 7/23/2020 16:07",
 		"recordSendId:method:receiver:arguments:context:" : "mt 7/28/2020 09:32",

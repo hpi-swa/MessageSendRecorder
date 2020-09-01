@@ -1,22 +1,17 @@
 examples
-example02
+example10
 	"
-	self example02.
+	self example10.
 	"	
 	| recorder |
 	recorder := MessageSendRecorder new.
 	recorder watchPackageNamed: #Morphic.
 	recorder watchPackageNamed: #Graphics.
-	"recorder setMessageSend: [ActiveWorld imageForm]."
+
 	recorder setMessageSend: (MessageSend receiver: Project current world selector: #imageForm).
 	
-	recorder
-		record: #duration
-		before: {[:record :rcvr :args |
-			record extension
-				argumentClasses: (args collect: [:ea | ea class])]}
-		after: #().
-	
+	recorder record: #duration.
 	recorder collectTimeRatio.
+	recorder collectTimeToRun.
 	
-	recorder topRecord explore; browse.
+	recorder topRecord browse.
