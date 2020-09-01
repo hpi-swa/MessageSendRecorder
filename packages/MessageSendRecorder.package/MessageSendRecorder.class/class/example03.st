@@ -11,11 +11,11 @@ example03
 	
 	recorder
 		record: #duration
-		before: {[:record :rcvr :args |
+		before: {[:record :rcvr :args :ctxt |
 			record extension
 				receiverObject: rcvr;
 				argumentObjects: args.]}
-		after: {[:record :rcvr :args :result |
+		after: {[:record :rcvr :args :result :ctxt |
 			record extension
 				returnObject: result]
 		}.

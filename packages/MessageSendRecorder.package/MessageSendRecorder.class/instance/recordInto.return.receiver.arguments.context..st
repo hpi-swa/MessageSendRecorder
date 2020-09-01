@@ -7,6 +7,6 @@ recordInto: returningRecord return: anReturnObject receiver: aReceiverObject arg
 	recordingProcess := nil.
 
 	(recordingHelpers at: #after) do: [:block |
-		block value: returningRecord value: aReceiverObject value: someArgumentObjects value: anReturnObject].
+		block value: returningRecord value: aReceiverObject value: someArgumentObjects value: anReturnObject value: aContext].
 	
 	recordingProcess := p.

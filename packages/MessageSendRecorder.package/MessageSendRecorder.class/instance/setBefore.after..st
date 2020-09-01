@@ -1,8 +1,8 @@
 initialization
 setBefore: someBeforeBlocks after: someAfterBlocks
 	"
-	someBeforeBlocks ... [:record :receiver :arguments | ... ]
-	someAfterBlocks ... [:record :receiver :arguments :result | ... ]
+	someBeforeBlocks ... [:record :receiver :arguments :context | ... ]
+	someAfterBlocks ... [:record :receiver :arguments :result :context | ... ]
 	"
 	
 	recordingHelpers

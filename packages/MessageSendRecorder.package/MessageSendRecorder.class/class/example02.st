@@ -12,7 +12,7 @@ example02
 	
 	recorder
 		record: #duration
-		before: {[:record :rcvr :args |
+		before: {[:record :rcvr :args :ctxt |
 			record extension
 				argumentClasses: (args collect: [:ea | ea class])]}
 		after: #().

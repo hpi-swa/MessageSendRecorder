@@ -14,7 +14,7 @@ example11
 	
 	recorder
 		record: #normal
-		before: {[:record :rcvr :args | rcvr isMorph ifTrue: [colors add: rcvr color]]}
+		before: {[:record :rcvr :args :ctxt | rcvr isMorph ifTrue: [colors add: rcvr color]]}
 		after: #().
 		
 	colors explore.

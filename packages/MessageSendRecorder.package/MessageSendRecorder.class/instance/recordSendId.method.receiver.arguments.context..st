@@ -6,16 +6,18 @@ recordSendId: aNumber method: aCompiledMethod receiver: aReceiver arguments: som
 	aContext closure ifNotNil: [:closure |
 		currentRecord method == closure homeMethod ifFalse: [
 			record := self
-				recordSendId: -1 	"Add extra record for closure activation."
-				method: closure homeMethod
-				receiver: nil arguments: #().
+				lookupSendId: -1 	"Add extra record for closure activation."
+				method: aContext method "compiled block (SistaV1) or method"
+				receiver: nil arguments: #()
+				context: aContext.
 			record extension isOuterContext: true]].
 
 	record := self
-		recordSendId: aNumber
+		lookupSendId: aNumber
 		method: aCompiledMethod
 		receiver: aReceiver
-		arguments: someArguments.
+		arguments: someArguments
+		context: aContext.
 
 	self
 		recordInto: record

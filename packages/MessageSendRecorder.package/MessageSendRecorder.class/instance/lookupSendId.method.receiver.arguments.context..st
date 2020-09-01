@@ -1,6 +1,6 @@
 recording - callbacks
-recordSendId: aNumber method: aCompiledMethod receiver: aReceiver arguments: someArguments
-	"Creates a new record for the message send."
+lookupSendId: aNumber method: aCompiledMethod receiver: aReceiver arguments: someArguments context: aContext
+	"Creates a new record for the message send or lookup the next one if it is a subsequent recording."
 
 	| record |
 	record := isFirstRecording
@@ -8,6 +8,7 @@ recordSendId: aNumber method: aCompiledMethod receiver: aReceiver arguments: som
 			recorder: self;
 			id: nextRecordId;
 			parent: currentRecord;
+			pc: aContext pc;
 			method: aCompiledMethod;
 			sendId: aNumber;
 			receiverClass: aReceiver class;

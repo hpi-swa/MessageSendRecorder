@@ -7,6 +7,6 @@ recordInto: aRecord receiver: aReceiver arguments: someArguments context: aConte
 	recordingProcess := nil.
 	
 	(recordingHelpers at: #before) do: [:block |
-		block value: aRecord value: aReceiver value: someArguments].
+		block value: aRecord value: aReceiver value: someArguments value: aContext].
 
 	recordingProcess := p.

@@ -9,6 +9,7 @@
 		"recorder",
 		"id",
 		"parent",
+		"pc",
 		"children",
 		"method",
 		"sendId",
