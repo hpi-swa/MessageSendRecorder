@@ -7,7 +7,8 @@ stepThrough
 	self stepOver.
 	
 	next := record parent
-		detect: [:child | child method == record parent method and: [child id > record id]]
+		detect: [:child | child id > record id and: [child method == record parent method
+			or: [child method isCompiledBlock and: [child method homeMethod == record parent method]]]]
 		ifNone: [^ self].
 	next := next children first.
 	
