@@ -50,8 +50,8 @@ You can configure the recorder with before/after blocks to write more informatio
 
 ```Smalltalk
 recorder
-  setBefore: { [:record :rcvr :args | record extension receiverObject: rcvr ] }
-  after: { [:record :rcvr :args :result | record extension returnValue: result ] }.
+  setBefore: { [:record :rcvr :args :context | record extension receiverObject: rcvr] }
+  after: { [:record :rcvr :args :result :context | record extension returnValue: result] }.
 ```
 
 *Beware of resource-intensive operations such as full object copies!*
