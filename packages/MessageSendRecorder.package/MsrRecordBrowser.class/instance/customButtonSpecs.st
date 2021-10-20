@@ -4,6 +4,7 @@ customButtonSpecs
 	
 	^ #(
 		('Go to'		goTo		'Jump to message send with id')
+		('Restart'	restart		'jump to first message send in this method'	canStep)
 		('Into'		stepInto		'step into message sends'	canStep)
 		('Over'		stepOver		'step over message sends'	canStep)
 		('Through'	stepThrough	'step into block'	canStep)
