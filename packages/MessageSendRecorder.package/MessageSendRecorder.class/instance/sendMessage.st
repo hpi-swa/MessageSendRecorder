@@ -2,7 +2,7 @@ recording
 sendMessage
 	"Simulate what method wrappers would do to the outermost message send."
 
-	| node receiver arguments method returnValue stopwatch |
+	| node receiver arguments method returnValue startTime startTicks |
 	node := self topRecord.
 	receiver := self topRecord parent.
 	method := self topRecord method.
@@ -18,14 +18,15 @@ sendMessage
 		context: thisContext.
 
 	self recordingMode == #duration ifTrue: [
-		stopwatch := Stopwatch new.
-		stopwatch activate].
+		startTime := Time utcMicrosecondClock.
+		startTicks := Time highResClock].
 
 	returnValue := receiver value.
 	
 	self recordingMode == #duration ifTrue: [
-		stopwatch suspend.
-		node extension duration: stopwatch duration].
+		node extension
+			duration: (Duration microSeconds: Time utcMicrosecondClock - startTime);
+			ticks: Time highResClock - startTicks].
 
 	self
 		recordInto: node

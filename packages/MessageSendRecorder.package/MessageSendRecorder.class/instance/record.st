@@ -13,7 +13,8 @@ record
 			self reset.
 			wrappers do: [:wrapper | wrapper uninstall].
 			self collectArgumentNames.
-			self fixDuration]
+			self fixDuration.
+			self fixTicks]
 		
 	] on: MsrRecordNotFound do: [:ex |
 		wrappers do: [:wrapper | wrapper uninstall].

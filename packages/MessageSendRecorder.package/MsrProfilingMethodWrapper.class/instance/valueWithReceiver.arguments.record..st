@@ -1,10 +1,11 @@
 evaluating
 valueWithReceiver: anObject arguments: anArrayOfObjects record: record
 
-	| stopwatch returnValue |
-	stopwatch := Stopwatch new.
-	stopwatch activate.
+	| startTime startTick returnValue |
+	startTime := Time utcMicrosecondClock.
+	startTick := Time highResClock.
 	returnValue := super valueWithReceiver: anObject arguments: anArrayOfObjects record: record.
-	stopwatch suspend.
-	record extension duration: stopwatch duration.
+	record extension
+		duration: (Duration microSeconds: Time utcMicrosecondClock - startTime);
+		ticks: Time highResClock - startTick.
 	^ returnValue
